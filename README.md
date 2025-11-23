@@ -8,18 +8,18 @@ This project implements the mathematical foundations of quantum computing (linea
 
 ## Features
 
-* ** "From Scratch" Quantum Engine:** No black-box SDKs (like Qiskit) used for the simulation logic. All matrix operations, tensor products, and state vector evolutions are hand-coded using `numpy`.
-* ** Interactive Circuit Builder:**
+* **"From Scratch" Quantum Engine:** No black-box SDKs (like Qiskit) used for the simulation logic. All matrix operations, tensor products, and state vector evolutions are hand-coded using `numpy`.
+* **Interactive Circuit Builder:**
     * Add gates (`X`, `Y`, `Z`, `H`, `S`, `T`, `CNOT`) dynamically.
     * Edit the circuit stack (Add/Delete steps) to test algorithms.
     * Visualize the operation sequence in a list format.
-* ** Real-Time Visualization:**
+* **Real-Time Visualization:**
     * **Probability Distribution:** Integrated Matplotlib bar charts showing measurement probabilities ($|\alpha|^2$).
     * **Amplitude Logs:** Detailed view of complex amplitudes ($\alpha + \beta i$) for debugging.
-* ** Entanglement Suite:**
+* **Entanglement Suite:**
     * **Bell State Generator:** Instantly create $\Phi^+, \Phi^-, \Psi^+, \Psi^-$ and GHZ states with a single click.
     * **Tensor Product Builder:** Intuitively build multi-qubit states (e.g., $|+\rangle \otimes |0\rangle$) without manual calculation.
-* ** Modern UI:** A professional dark-themed interface built with `ttkbootstrap`.
+* **Modern UI:** A professional dark-themed interface built with `ttkbootstrap`.
 
 ##  Installation
 
