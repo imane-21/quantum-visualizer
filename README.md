@@ -1,4 +1,4 @@
-# Quantum Visualizer Pro ⚛️
+# Quantum Visualizer
 
 A fully interactive **Quantum Circuit Simulator** and **State Visualizer** built from scratch in Python.
 
