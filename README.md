@@ -25,7 +25,7 @@ This project implements the mathematical foundations of quantum computing (linea
 
 1.  **Clone the repository**
     ```bash
-    git clone [git@github.com:imane-21/quantum-visualizer.git](https://github.com/imane-21/quantum-visualizer)
+    git clone git@github.com:imane-21/quantum-visualizer.git
     cd quantum-visualizer
     ```
 
