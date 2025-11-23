@@ -2,11 +2,9 @@
 
 A fully interactive **Quantum Circuit Simulator** and **State Visualizer** built from scratch in Python.
 
-![Demo](ressources/demonstration.gif)
-
 This project implements the mathematical foundations of quantum computing (linear algebra, tensor products, unitary matrices) using **NumPy**, wrapped in a modern **Tkinter (ttkbootstrap)** GUI. It allows users to build circuits, visualize entanglement, and observe measurement probabilities in real-time.
 
-![Main Interface](ressources/main-interface.png)
+![Demo](ressources/demonstration.gif)
 
 ## Features
 
