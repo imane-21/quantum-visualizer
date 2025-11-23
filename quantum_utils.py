@@ -1,4 +1,5 @@
 """Quantum utilities: state parsing, normalization, gates using NumPy."""
+
 from typing import List, Tuple
 import numpy as np
 

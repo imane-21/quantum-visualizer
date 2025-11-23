@@ -1,9 +1,5 @@
 """Entry point for the Qtum Calculator app.
 
-This file supports being executed both as a module (package context) and as a
-standalone script. When run as a script, it ensures the local `src` directory is
-on sys.path and imports the GUI accordingly to avoid "attempted relative import
-with no known parent package" errors.
 """
 import sys
 import os

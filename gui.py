@@ -3,8 +3,6 @@ import tkinter as tk
 from tkinter import messagebox
 from typing import Optional
 import numpy as np
-
-# Imports pour le Style et Matplotlib
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 import matplotlib.pyplot as plt
@@ -15,7 +13,7 @@ try:
 except Exception:
     import quantum_utils as qu
 
-# Configuration de Matplotlib
+# Matplotlib configuration
 plt.style.use('dark_background')
 
 class QuantumCalculator(ttk.Frame):
@@ -35,7 +33,7 @@ class QuantumCalculator(ttk.Frame):
 
         self.create_layout()
         
-        # Initialisation état par défaut
+        # Initialisation default state
         self.set_state_vector_text(np.array([1, 0, 0, 0], dtype=complex))
         self.update_output(np.array([1, 0, 0, 0], dtype=complex))
 
@@ -56,7 +54,7 @@ class QuantumCalculator(ttk.Frame):
         frame = ttk.Labelframe(parent, text="1. State Initialization", padding=10, bootstyle="info")
         frame.pack(fill=X, pady=(0, 10))
 
-        # Zone de saisie manuelle
+        # Manual input area
         lbl = ttk.Label(frame, text="Manual Vector Input:", font=("Helvetica", 8, "italic"))
         lbl.pack(anchor=W)
         
@@ -67,7 +65,7 @@ class QuantumCalculator(ttk.Frame):
         self.state_entry.pack(side=LEFT, fill=X, expand=True)
         ttk.Button(input_row, text="Update Plot", command=self.manual_update, bootstyle="info").pack(side=LEFT, padx=5)
 
-        # --- LE CLAVIER / BUILDER ---
+        # --- THE KEYBOARD / BUILDER ---
         tabs = ttk.Notebook(frame, bootstyle="secondary")
         tabs.pack(fill=X)
 
@@ -95,7 +93,7 @@ class QuantumCalculator(ttk.Frame):
         grid_frm = ttk.Frame(tab_special)
         grid_frm.pack(fill=X)
         
-        # Les 4 États de Bell
+        # The 4 Bell States
         ttk.Button(grid_frm, text="Φ+ (|00>+|11>)", command=lambda: self.set_bell_state("phi+"), bootstyle="warning-outline").grid(row=0, column=0, padx=2, pady=2, sticky=EW)
         ttk.Button(grid_frm, text="Φ- (|00>-|11>)", command=lambda: self.set_bell_state("phi-"), bootstyle="warning-outline").grid(row=0, column=1, padx=2, pady=2, sticky=EW)
         ttk.Button(grid_frm, text="Ψ+ (|01>+|10>)", command=lambda: self.set_bell_state("psi+"), bootstyle="warning-outline").grid(row=1, column=0, padx=2, pady=2, sticky=EW)
@@ -107,7 +105,7 @@ class QuantumCalculator(ttk.Frame):
         grid_frm.columnconfigure(0, weight=1)
         grid_frm.columnconfigure(1, weight=1)
         
-        # Outils
+        # Tools
         tool_row = ttk.Frame(frame)
         tool_row.pack(fill=X, pady=(10, 0))
         ttk.Button(tool_row, text="Check Norm", command=self.check_norm, bootstyle="secondary-outline", width=12).pack(side=LEFT, padx=2)
@@ -167,7 +165,7 @@ class QuantumCalculator(ttk.Frame):
         self.cb_control = ttk.StringVar(value='')
         ttk.Entry(row, textvariable=self.cb_control, width=3).pack(side=LEFT)
         
-        # BOUTONS D'ACTION (Ajout de DEL)
+        # ACTION BUTTONS
         ttk.Button(row, text="+", command=self.cb_add_step, width=3, bootstyle="success-outline").pack(side=LEFT, padx=5)
         ttk.Button(row, text="Del", command=self.cb_delete_step, width=3, bootstyle="warning-outline").pack(side=LEFT, padx=2)
         ttk.Button(row, text="Clr", command=self.cb_clear_steps, width=3, bootstyle="danger-outline").pack(side=LEFT, padx=2)
@@ -179,7 +177,7 @@ class QuantumCalculator(ttk.Frame):
         ttk.Button(frame, text="Run Circuit", command=self.cb_apply_circuit, bootstyle="success").pack(fill=X)
 
     def create_viz_section(self, parent):
-        # Graphique
+        # Plot
         self.figure, self.ax = plt.subplots(figsize=(5, 4), dpi=100)
         self.figure.patch.set_facecolor('#222222') 
         self.ax.set_facecolor('#222222')
@@ -334,7 +332,6 @@ class QuantumCalculator(ttk.Frame):
             display_text = f"{g} gate on q{t}"
         self.steps_listbox.insert(tk.END, display_text)
 
-    # NOUVELLE FONCTION DE SUPPRESSION
     def cb_delete_step(self):
         selection = self.steps_listbox.curselection()
         if not selection:
